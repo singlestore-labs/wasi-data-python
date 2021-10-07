@@ -1,0 +1,8 @@
+
+square: function(val: s64) -> s64
+
+square_vec: function(val: list<s64>) -> list<s64>
+
+mult: function(a: s64, b: s64) -> s64
+
+mult_vec: function(a: list<s64>, b: list<s64>) -> list<s64>

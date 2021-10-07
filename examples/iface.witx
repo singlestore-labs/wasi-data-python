@@ -1,0 +1,12 @@
+record SimpleString {
+    s: string,
+}
+
+record PolarityScores {
+    compound: f64,
+    positive: f64,
+    negative: f64,
+    neutral: f64,
+}
+
+sentiment: function(input: SimpleString) -> PolarityScores
