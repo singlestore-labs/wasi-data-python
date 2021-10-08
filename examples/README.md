@@ -11,7 +11,7 @@ https://code.visualstudio.com/docs/remote/containers.
 
 When opening the project folder in VSCode, you should get a popup asking you if you
 want to open the project in a container. If not, you can hit **F1** and select
-**Remote-Containers: Reopen in container**. At this point, you should be able to
+**Remote-Containers: Open Folder in Container...**. At this point, you should be able to
 open the example notebooks and they will render inline.
 
 ## Run Jupyter notebook server in Docker

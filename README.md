@@ -3,15 +3,6 @@
 This project includes Python utilities related to the
 [wasi-data](https://github.com/singlestore-labs/wasi-data) specification.
 
-## devcontainer
-
-This project uses VS Code [devcontainers](https://code.visualstudio.com/docs/remote/containers).
-
-If this is your first time using a development container, please follow the [getting started steps](https://aka.ms/vscode-remote/containers/getting-started).
-
-1. Clone the repository and open in VS Code
-2. Press F1 and select the Remote-Containers: Open Folder in Container... command.
-
 ## WASI
 
 [WASI](https://wasi.dev/) is a modular system interface for WebAssembly. Checkout this [blog post](https://hacks.mozilla.org/2019/03/standardizing-wasi-a-webassembly-system-interface/) for an excellent overview and introduction. This system interface securely
@@ -48,3 +39,7 @@ df['a'].apply(wasm_funcs.mult, args=[5])
 df['a'].apply(wasm_funcs.mult, df['b'])
 wasm_funcs.mult(df['a'], df['b'])
 ```
+
+The [examples](examples) folder also contains examples in Jupyter notebook form.
+See the [README.md](examples/README.md) file in that directory for information on how to run
+them.
