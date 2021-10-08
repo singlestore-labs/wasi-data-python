@@ -24,6 +24,12 @@ COPY README.md /tmp/pip-tmp/
 ADD witxcraft/ /tmp/pip-tmp/witxcraft
 RUN (cd /tmp/pip-tmp && python3 setup.py install -f)
 
+# Add Tini. Tini operates as a process subreaper for jupyter. This prevents
+# kernel crashes.
+ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-static /usr/bin/tini
+RUN chmod +x /usr/bin/tini
+ENTRYPOINT ["/usr/bin/tini", "--"]
+
 # Expose jupyter and Dask dashboard ports
 EXPOSE 8787
 EXPOSE 8786
