@@ -288,8 +288,8 @@ def fromwasmmod(
         try:
             subprocess.check_call(
                 ["witx-bindgen", "--help"],
-                stdin=subprocess.DEVNULL,
                 stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
             )
         except (FileNotFoundError, subprocess.CalledProcessError):
             print(
@@ -310,7 +310,8 @@ def fromwasmmod(
                 exports_witx,
                 "--out-dir",
                 temp_dir,
-            ]
+            ],
+            stdout=subprocess.DEVNULL,
         )
 
         with open(os.path.join(temp_dir, "bindings.py"), "r") as bindings_file:
