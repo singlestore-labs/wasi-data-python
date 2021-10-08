@@ -35,4 +35,6 @@ EXPOSE 8787
 EXPOSE 8786
 EXPOSE 8888
 
+RUN pip3 --disable-pip-version-check --no-cache-dir install sqlalchemy ipython-sql mysqlclient
+
 CMD ["jupyter", "lab", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
