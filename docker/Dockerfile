@@ -5,11 +5,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
 ARG NODE_VERSION="none"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
 
-# Install examples requirements
-COPY examples/requirements.txt /tmp/pip-tmp/
-RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
-    && rm -rf /tmp/pip-tmp
-
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
      	graphviz
@@ -17,6 +12,11 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Install Rust and witx-bindgen
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 RUN /root/.cargo/bin/cargo install --git https://github.com/bytecodealliance/witx-bindgen witx-bindgen-cli && mv /root/.cargo/bin/witx-bindgen /usr/bin/
+
+# Install examples requirements
+COPY examples/requirements.txt /tmp/pip-tmp/
+RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
+    && rm -rf /tmp/pip-tmp
 
 # Install witxcraft
 COPY setup.py /tmp/pip-tmp/
