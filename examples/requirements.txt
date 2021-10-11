@@ -6,3 +6,7 @@ graphviz
 wasmtime
 mysqlclient
 sqlalchemy
+plotly
+numpy
+chart_studio
+pymysql
