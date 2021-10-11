@@ -4,3 +4,5 @@ pandas
 jupyterlab
 graphviz
 wasmtime
+mysqlclient
+sqlalchemy
