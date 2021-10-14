@@ -12,7 +12,7 @@ setup(
     long_description=open("README.md", "r").read(),
     long_description_content_type="text/markdown",
     packages=['witxcraft'],
-    install_requires=["pandas", "wasmtime"],
+    install_requires=["pandas", "wasmtime", "parsimonious"],
     platforms="any",
     classifiers=[
         "Development Status :: 3 - Alpha",

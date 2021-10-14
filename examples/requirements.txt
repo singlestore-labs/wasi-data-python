@@ -6,6 +6,7 @@ jupyterlab
 mysqlclient
 numpy
 pandas
+parsimonious
 plotly
 pymysql
 sqlalchemy
