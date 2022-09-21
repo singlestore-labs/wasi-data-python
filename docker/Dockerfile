@@ -9,9 +9,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
      	graphviz
 
-# Install Rust and wit-bindgen
+# Install Rust and witx-bindgen
 RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
-RUN /root/.cargo/bin/cargo install --git https://github.com/bytecodealliance/wit-bindgen wit-bindgen-cli && mv /root/.cargo/bin/wit-bindgen /usr/bin/
+RUN /root/.cargo/bin/cargo install --git https://github.com/bytecodealliance/witx-bindgen witx-bindgen-cli --rev 0fea5183d121fdf736585ab9d291b3cc08487cd0 && mv /root/.cargo/bin/witx-bindgen /usr/bin/
 
 # Install examples requirements
 COPY examples/requirements.txt /tmp/pip-tmp/
